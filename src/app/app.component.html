@@ -1,0 +1,69 @@
+<igx-navbar class="navbar">
+  <igx-navbar-title class="navbar-content">
+    <h6 class="h6">
+      App Name
+    </h6>
+  </igx-navbar-title>
+  <button igxButton="icon" igxRipple>
+    <igx-icon>
+      search
+    </igx-icon>
+  </button>
+  <button igxButton="icon" igxRipple>
+    <igx-icon>
+      favorite
+    </igx-icon>
+  </button>
+  <button igxButton="icon" igxRipple>
+    <igx-icon>
+      more_vert
+    </igx-icon>
+  </button>
+</igx-navbar>
+<div class="row-layout group">
+  <igx-nav-drawer [pin]="true" [pinThreshold]="1024" width="320px" class="nav-drawer">
+    <ng-template igxDrawerMini>
+      <div igxDrawerItem igxRipple routerLink="/view1">
+        <igx-icon class="icon">
+          account_circle
+        </igx-icon>
+      </div>
+      <div igxDrawerItem igxRipple routerLink="/view2">
+        <igx-icon class="icon">
+          assignment_turned_in
+        </igx-icon>
+      </div>
+      <div igxDrawerItem igxRipple routerLink="/view3">
+        <igx-icon class="icon">
+          assessment
+        </igx-icon>
+      </div>
+    </ng-template>
+    <ng-template igxDrawer>
+      <div igxDrawerItem igxRipple>
+        <igx-icon class="icon">
+          account_circle
+        </igx-icon>
+        <span>Title goes here</span>
+      </div>
+    </ng-template>
+  </igx-nav-drawer>
+  <div class="column-layout group">
+    <igx-grid [data]="northwindCategories" primaryKey="categoryID" displayDensity="cosy" [allowFiltering]="true" filterMode="excelStyleFilter" height="753px" class="grid">
+      <igx-column field="categoryID" dataType="number" header="categoryID" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="description" dataType="string" header="description" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="name" dataType="string" header="name" [sortable]="true" [selectable]="false"></igx-column>
+    </igx-grid>
+    <div class="view-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="column-layout group_1">
+    <p class="ig-typography__subtitle-2 text">
+      FIXED PANE (GLOBAL)
+    </p>
+    <p class="ig-typography__body-2 text_1">
+      Ut finibus risus eros, et bibendum ante eleifend ac. Sed justo felis, ultrices vel velit quis, sodales consectetur tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed consectetur mi.
+    </p>
+  </div>
+</div>
